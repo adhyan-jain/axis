@@ -1,0 +1,44 @@
+# Gradle / Android build output
+.gradle/
+build/
+**/build/
+.kotlin/
+captures/
+*.apk
+*.aab
+*.hprof
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+
+# Secrets / local config
+local.properties
+.env
+.env.*
+!.env.example
+*.jks
+*.keystore
+keystore.properties
+google-services.json
+
+# Node (site/)
+node_modules/
+site/dist/
+
+# Python (e2e/)
+__pycache__/
+*.pyc
+.venv/
+
+# Tooling artifacts
+.playwright-mcp/
+graphify-out/
+.claude/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
