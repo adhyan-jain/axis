@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <application android:label="FakeWA" android:theme="@android:style/Theme.Material.NoActionBar">
+        <!-- Accepts the wa.me link Axis opens when it "sends" a message. -->
+        <activity android:name="fake.wa.ViewActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https" android:host="wa.me" />
+            </intent-filter>
+        </activity>
+        <!-- Test driver: send the fake.POST broadcast with sender and text extras -->
+        <receiver android:name="fake.wa.PostReceiver" android:exported="true">
+            <intent-filter><action android:name="fake.POST" /></intent-filter>
+        </receiver>
+        <receiver android:name="fake.wa.ReplyReceiver" android:exported="false" />
+    </application>
+</manifest>
